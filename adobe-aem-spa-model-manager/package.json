@@ -1,10 +1,16 @@
 {
-  "name": "@kav/adobe-aem-spa-model-manager",
+  "name": "@kav-khalsa/adobe-aem-spa-model-manager",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0"
   },
   "sideEffects": false,
-  "homepage": "https://github.com/koolkav1/adobe-packages/tree/main/adobe-aem-spa-model-manager"
+  "homepage": "https://github.com/koolkav1/adobe-packages/tree/main/adobe-aem-spa-model-manager",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "private": false,
+  "repository": "git@github.com:koolkav1/adobe-packages.git"
 }
