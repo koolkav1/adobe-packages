@@ -13,9 +13,13 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@kav/adobe-aem-spa-model-manager": [
+      "@kav-khalsa/aem-angular-editable-components": [
+        "adobe-aem-angular-editable-components/src/index.ts"
+      ],
+      "@kav-khalsa/adobe-aem-spa-model-manager": [
         "adobe-aem-spa-model-manager/src/index.ts"
       ]
     }

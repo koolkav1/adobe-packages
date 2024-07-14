@@ -1,5 +1,3 @@
-import { FormGroupName } from '@angular/forms';
-
 export * from './lib/common/constants';
 export * from './lib/common/deep-clone';
 export * from './lib/common/domain-token';
