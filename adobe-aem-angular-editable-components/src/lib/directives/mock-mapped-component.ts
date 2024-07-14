@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { MappedComponentProperties } from '../models/mapped-component-properties.interface';
 
 @Component({
-  selector: 'app-mock-mapped-component',
+  selector: 'mock-mapped-component',
   template: '<div>Mock Mapped Component</div>'
 })
 export class MockMappedComponent implements MappedComponentProperties {
   cqPath: string = '';
   itemName: string = '';
-  testProp?: string; // Add the property used in the test
+  testProp?: string;
 }

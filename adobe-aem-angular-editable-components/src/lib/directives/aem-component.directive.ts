@@ -8,7 +8,6 @@ import {
     OnChanges,
     OnDestroy,
     OnInit,
-    Renderer2,
     Type,
     ViewContainerRef
   } from '@angular/core';
@@ -18,7 +17,7 @@ import {
   import { MappedComponentProperties } from '../models/mapped-component-properties.interface';
   import { ComponentMappingWithConfigService } from '../layout/component-mapping-with-config.service';
   
-  const PLACEHOLDER_CLASS_NAME = 'cq-placeholder';
+  export const PLACEHOLDER_CLASS_NAME = 'cq-placeholder';
   
   @Directive({
     selector: '[aemComponent]'
@@ -32,9 +31,9 @@ import {
   
     private _component!: ComponentRef<MappedComponentProperties>;
     private _cqItem: any;
+    private _type: string | undefined;
   
     constructor(
-      private renderer: Renderer2,
       private viewContainer: ViewContainerRef,
       private changeDetectorRef: ChangeDetectorRef,
       private utils: UtilsService,
@@ -49,12 +48,16 @@ import {
     @Input()
     set cqItem(value: any) {
       this._cqItem = value;
+      this._type = value?.[Constants.TYPE_PROP];
+    }
+  
+    get type(): string | undefined {
+      return this._type;
     }
   
     async ngOnInit() {
       if (this.type) {
         const mappedComponent = this.componentMapping.get<MappedComponentProperties>(this.type);
-  
         if (mappedComponent) {
           this.renderComponent(mappedComponent);
         } else {
@@ -95,10 +98,6 @@ import {
       }
     }
   
-    private get type(): string | undefined {
-      return this.cqItem && this.cqItem[Constants.TYPE_PROP];
-    }
-  
     private renderComponent(componentDefinition: Type<MappedComponentProperties>) {
       if (!componentDefinition) {
         throw new Error('No component definition!!');
@@ -136,7 +135,7 @@ import {
     private includeAppliedCSSClasses() {
       const appliedCssClassNames = this.cqItem[Constants.APPLIED_CLASS_NAMES] || '';
       if (appliedCssClassNames && this._component) {
-        this.renderer.setAttribute(this._component.location.nativeElement, 'class', appliedCssClassNames);
+        this._component.location.nativeElement.className = appliedCssClassNames;
       }
     }
   
@@ -145,10 +144,10 @@ import {
         Object.keys(this.itemAttrs).forEach((key) => {
           if (key === 'class') {
             this.itemAttrs[key].split(' ').forEach((itemClass: string) => {
-              this.renderer.addClass(this._component.location.nativeElement, itemClass);
+              this._component.location.nativeElement.classList.add(itemClass);
             });
           } else {
-            this.renderer.setAttribute(this._component.location.nativeElement, key, this.itemAttrs[key]);
+            this._component.location.nativeElement.setAttribute(key, this.itemAttrs[key]);
           }
         });
       }
@@ -160,11 +159,11 @@ import {
   
     private setupPlaceholder(editConfig: any) {
       if (this.usePlaceholder(editConfig)) {
-        this.renderer.addClass(this._component.location.nativeElement, PLACEHOLDER_CLASS_NAME);
-        this.renderer.setAttribute(this._component.location.nativeElement, 'data-emptytext', editConfig.emptyLabel);
+        this._component.location.nativeElement.classList.add(PLACEHOLDER_CLASS_NAME);
+        this._component.location.nativeElement.setAttribute('data-emptytext', editConfig.emptyLabel);
       } else {
-        this.renderer.removeClass(this._component.location.nativeElement, PLACEHOLDER_CLASS_NAME);
-        this.renderer.removeAttribute(this._component.location.nativeElement, 'data-emptytext');
+        this._component.location.nativeElement.classList.remove(PLACEHOLDER_CLASS_NAME);
+        this._component.location.nativeElement.removeAttribute('data-emptytext');
       }
     }
   }
