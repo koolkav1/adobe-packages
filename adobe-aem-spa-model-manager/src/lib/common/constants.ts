@@ -7,7 +7,10 @@ export const Constants = {
     PATH_PROP : ':path',
     CHILDREN_PROP : ':children',
     HIERARCHY_TYPE_PROP : ':hierarchyType',
-    JCR_CONTENT : 'jcr:content'
+    JCR_CONTENT : 'jcr:content',
+    ASYNC_CONTENT_LOADED_EVENT: 'asyncContentLoaded',
+    PLACEHOLDER_CLASS_NAMES : 'aem-Grid-newComponent',
+    RESPONSIVE_GRID_TYPE: 'wcm/foundation/components/responsivegrid'
 }
 
 export enum AEM_MODE {

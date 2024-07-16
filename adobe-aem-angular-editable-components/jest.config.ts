@@ -15,6 +15,8 @@ export default {
   },
   moduleNameMapper: {
     '^@kav-khalsa/adobe-aem-spa-model-manager/src/lib/common/constants$': '<rootDir>/src/mocks/constants.ts',
+    '^@kav-khalsa/adobe-aem-spa-model-manager/src/lib/services/model-manager.service$': '<rootDir>/src/mocks/model-manager.mock.ts',
+    '^@kav-khalsa/adobe-aem-spa-model-manager/src/lib/utils/path.service$': '<rootDir>/src/mocks/path-utils.mock.ts',
   },
   transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
   snapshotSerializers: [

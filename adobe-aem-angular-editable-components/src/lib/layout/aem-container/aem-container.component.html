@@ -1,0 +1,10 @@
+@for (itemKey of cqItemsOrder; track $index) {
+    <ng-container>
+        <aem-model-provider [cqItem]="getItem(itemKey)" [cqPath]="getDataPath(itemKey)" [itemName]="itemKey">
+        </aem-model-provider>
+    </ng-container>
+}
+
+@if (isInEditMode) {
+    <div [attr.data-cq-data-path]="placeholderPath" [class]="getPlaceholderClassNames()"></div>
+}
