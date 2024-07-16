@@ -9,7 +9,8 @@ import {
     OnDestroy,
     OnInit,
     Type,
-    ViewContainerRef
+    ViewContainerRef,
+    inject
   } from '@angular/core';
   
   import { Constants } from '../layout/constants';
@@ -20,7 +21,9 @@ import {
   export const PLACEHOLDER_CLASS_NAME = 'cq-placeholder';
   
   @Directive({
-    selector: '[aemComponent]'
+    selector: '[aemComponent]',
+    standalone: true,
+    providers: [ComponentMappingWithConfigService, UtilsService]
   })
   export class AEMComponentDirective implements AfterViewInit, OnInit, OnDestroy, OnChanges {
     @Input() cqPath = '';
@@ -33,13 +36,11 @@ import {
     private _cqItem: any;
     private _type: string | undefined;
   
-    constructor(
-      private viewContainer: ViewContainerRef,
-      private changeDetectorRef: ChangeDetectorRef,
-      private utils: UtilsService,
-      private componentMapping: ComponentMappingWithConfigService,
-      public injector: Injector
-    ) {}
+    private viewContainer = inject(ViewContainerRef) ;
+    private changeDetectorRef = inject( ChangeDetectorRef);
+    private utils = inject( UtilsService);
+    private componentMapping = inject(ComponentMappingWithConfigService) ;
+    public injector = inject( Injector);
   
     get cqItem(): any {
       return this._cqItem;

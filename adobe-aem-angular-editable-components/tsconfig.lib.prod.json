@@ -1,10 +1,25 @@
 {
-  "extends": "./tsconfig.lib.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declarationMap": false,
-    "composite": true
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "target": "es2022",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "types": [],
+    "lib": ["dom", "es2022"],
+    "skipLibCheck": true,
+    "strict": true,
+    "skipDefaultLibCheck": true
   },
-  "angularCompilerOptions": {
-    "compilationMode": "partial"
-  }
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.spec.ts"
+  ]
 }

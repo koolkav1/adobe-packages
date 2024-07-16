@@ -11,7 +11,8 @@ import { AEMComponentDirective } from '../../directives/aem-component.directive'
   selector: 'aem-model-provider,[aemModelProvider]',
   templateUrl: './aem-model-provider.component.html',
   standalone: true,
-  providers: [ModelManagerService, PathUtilsService, UtilsService]
+  providers: [ModelManagerService, PathUtilsService, UtilsService],
+  imports: [AEMComponentDirective]
 })
 /**
  * The current component is responsible for providing access to the ModelManager and the model of a component

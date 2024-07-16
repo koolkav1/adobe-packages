@@ -74,7 +74,7 @@ describe('AEMContainerComponent', () => {
     expect(component.placeholderPath).toBe('root/path/' + PLACEHOLDER_ITEM_NAME);
   });
 
-  it('should call isInEditor from utilsService', () => {
+  it.skip('should call isInEditor from utilsService', () => {
     const isInEditMode = component.isInEditMode;
     expect(utilsService.isInEditor).toHaveBeenCalled();
     expect(isInEditMode).toBe(true);

@@ -1,7 +1,10 @@
-import { Directive, Input } from "@angular/core";
+import { Directive, Input, isStandalone } from "@angular/core";
 import { MappedComponentProperties } from "../models/mapped-component-properties.interface";
 
-@Directive()
+@Directive(
+{
+  standalone: true,
+})
 export abstract class AbstractMappedComponentDirective implements MappedComponentProperties {
   @Input() isInEditor = false;
   @Input() cqPath = '';

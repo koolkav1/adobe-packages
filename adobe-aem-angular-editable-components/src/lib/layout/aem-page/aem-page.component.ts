@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AEMContainerComponent } from '../aem-container/aem-container.component';
+import { AEMComponentDirective } from '../../directives/aem-component.directive';
+import { AEMModelProviderComponent } from '../aem-model-provider/aem-model-provider.component';
+import { UtilsService } from '../utils.service';
 
 /**
  * @private
@@ -13,7 +16,9 @@ const PAGE_MODEL_SEPARATOR = '/jcr:content/';
       '[attr.data-cq-data-path]': 'cqPath'
   },
   templateUrl: '../aem-container/aem-container.component.html',
-  standalone: true
+  standalone: true,
+  providers: [UtilsService],
+  imports: [AEMModelProviderComponent, AEMComponentDirective, AEMContainerComponent]
 })
 /**
  * The current component carries the base presentational logic of page component

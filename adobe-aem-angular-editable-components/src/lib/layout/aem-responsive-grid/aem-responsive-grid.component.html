@@ -20,14 +20,13 @@
 <ng-template>
   @for (itemKey of cqItemsOrder; track $index) {
   <ng-container>
-    <div
-      [aemModelProvider]
-      [cqItem]="getItem(itemKey)"
-      [cqPath]="getDataPath(itemKey)"
-      [itemName]="itemKey"
-      [class]="getColumnClassNames(itemKey)"
-      [attr.data-cq-data-path]="getAttrDataPath(itemKey)"
-    ></div>
+    <aem-model-provider [cqItem]="getItem(itemKey)"
+    [cqPath]="getDataPath(itemKey)"
+    [itemName]="itemKey"
+    [class]="getColumnClassNames(itemKey)"
+    [attr.data-cq-data-path]="getAttrDataPath(itemKey)">
+    </aem-model-provider>
+
   </ng-container>
   } @if (isInEditMode) {
   <div

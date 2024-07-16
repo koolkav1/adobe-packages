@@ -5,6 +5,8 @@ import { CONTAINER_CLASS_NAMES, PLACEHOLDER_CLASS_NAMES, PLACEHOLDER_ITEM_NAME }
 import { AbstractMappedComponentDirective } from '../../directives/abstract-mapped-component.directive';
 import { UtilsService } from '../utils.service';
 import { CQItems } from '../../models/cq-items.interface';
+import { AEMModelProviderComponent } from '../aem-model-provider/aem-model-provider.component';
+import { AEMComponentDirective } from '../../directives/aem-component.directive';
 
 @Component({
   selector: 'aem-container',
@@ -13,7 +15,9 @@ import { CQItems } from '../../models/cq-items.interface';
     '[attr.data-cq-data-path]': 'cqPath'
   },
   standalone: true,
-  template: '<ng-content></ng-content>' // Ensure there's content to render
+  template: '<ng-content />',
+  providers: [UtilsService],
+  imports: [AEMModelProviderComponent, AEMComponentDirective]
 })
 export class AEMContainerComponent extends AbstractMappedComponentDirective implements AEMContainerComponentProperties {
   @Input() cqItems?: CQItems;
