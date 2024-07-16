@@ -12,7 +12,7 @@ import { Constants } from '../layout/constants';
 class TestComponent {
   aemComponent: any;
   cqItem: any;
-  cqPath: string = '';
+  cqPath = '';
 }
 
 @Component({
@@ -20,8 +20,8 @@ class TestComponent {
   template: '<div>Mock Component</div>'
 })
 class MockMappedComponent implements MappedComponentProperties {
-  cqPath: string = '';
-  itemName: string = '';
+  cqPath = '';
+  itemName = '';
 }
 
 describe('AEMComponentDirective', () => {

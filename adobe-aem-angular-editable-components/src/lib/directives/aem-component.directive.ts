@@ -23,10 +23,10 @@ import {
     selector: '[aemComponent]'
   })
   export class AEMComponentDirective implements AfterViewInit, OnInit, OnDestroy, OnChanges {
-    @Input() cqPath: string = '';
-    @Input() itemName: string = '';
+    @Input() cqPath = '';
+    @Input() itemName = '';
     @Input() itemAttrs: any;
-    @Input() loaded: boolean = false;
+    @Input() loaded = false;
     @Input() aemComponent: any;
   
     private _component!: ComponentRef<MappedComponentProperties>;

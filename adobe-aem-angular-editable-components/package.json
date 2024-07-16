@@ -2,9 +2,11 @@
   "name": "@kav-khalsa/aem-angular-editable-components",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0",
-    "@kav-khalsa/adobe-aem-spa-model-manager": "^0.0.2"
+    "@kav-khalsa/adobe-aem-spa-model-manager": "^0.0.2",
+    "@jest/globals": "29.7.0",
+    "@angular/router": "~18.0.0",
+    "jest-preset-angular": "~14.1.0"
   },
   "sideEffects": false
 }

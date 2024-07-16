@@ -20,7 +20,7 @@ export class AEMModelProviderComponent implements OnInit, OnDestroy {
   /**
    * Path to the model associated with the current instance of the component
    */
-  @Input() cqPath: string ='';
+  @Input() cqPath ='';
   /**
    * Model item associated with the current model provider component
    */
@@ -28,11 +28,11 @@ export class AEMModelProviderComponent implements OnInit, OnDestroy {
   /**
    * Name of the item associated with the current model provider component
    */
-  @Input() itemName: string ='';
+  @Input() itemName ='';
 
   @Input() aemModelProvider!: any;
-  @Input() pagePath: string = '';
-  @Input() itemPath: string = '';
+  @Input() pagePath = '';
+  @Input() itemPath = '';
 
   @Output() updateDataPath = new EventEmitter<{ cqPath: string }>();
 

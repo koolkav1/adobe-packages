@@ -11,9 +11,9 @@ import { UtilsService } from '../utils.service';
   standalone: true
 })
 class MockAEMModelProviderComponent {
-  @Input() pagePath: string = '';
-  @Input() itemPath: string = '';
-  @Input() cqPath: string = '';
+  @Input() pagePath = '';
+  @Input() itemPath = '';
+  @Input() cqPath = '';
 }
 
 describe('AEMRemoteComponent', () => {
