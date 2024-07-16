@@ -20,7 +20,7 @@ describe('AEMAllowedComponentsContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AEMAllowedComponentsContainerComponent ],
+      imports: [AEMAllowedComponentsContainerComponent],
       providers: [
         { provide: AEMContainerComponent, useClass: MockAEMContainerComponent }
       ]

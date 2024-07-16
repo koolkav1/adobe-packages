@@ -4,7 +4,7 @@
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0",
-    "@kav-khalsa/adobe-aem-spa-model-manager": "^0.0.1"
+    "@kav-khalsa/adobe-aem-spa-model-manager": "^0.0.2"
   },
   "sideEffects": false
 }
