@@ -1,9 +1,9 @@
 {
   "name": "@kav-khalsa/aem-angular-editable-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/core": "^18.0.0",
-    "@kav-khalsa/adobe-aem-spa-model-manager": "^0.0.2",
+    "@kav-khalsa/adobe-aem-spa-model-manager": "^0.0.3",
     "@angular/router": "~18.0.0"
     
   },
@@ -18,5 +18,6 @@
     "registry": "https://registry.npmjs.org/"
   },
   "private": false,
-  "repository": "git@github.com:koolkav1/adobe-packages.git"
+  "repository": "git@github.com:koolkav1/adobe-packages.git",
+  "license":"Apache-2.0"
 }
